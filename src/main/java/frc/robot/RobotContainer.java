@@ -24,6 +24,7 @@ import frc.robot.vision.FollowTarget;
  * periodic methods (other than the scheduler calls).  Instead, the structure of the robot
  * (including subsystems, commands, and button mappings) should be declared here.
  */
+import frc.robot.vision.Limelight;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   public static XboxController xbox = new XboxController(0); 
@@ -32,6 +33,9 @@ public class RobotContainer {
   public static TailSubsystem tail = new TailSubsystem();
   public static BeakSubsystem beak = new BeakSubsystem();
   public static NeckSubsystem neck = new NeckSubsystem();
+  public static Limelight limelight = new Limelight();
+  public static FollowTarget follow = new FollowTarget();
+
   Command driving = new RunCommand(()-> drive.TankDrive(xbox.getRawAxis(5), xbox.getRawAxis(1)));
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.

@@ -11,12 +11,6 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
-import frc.robot.subsystems.BeakSubsystem;
-import frc.robot.subsystems.DriveSubsystem;
-import frc.robot.subsystems.NeckSubsystem;
-import frc.robot.subsystems.TailSubsystem;
-import frc.robot.vision.FollowTarget;
-import frc.robot.vision.Limelight;
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
  * each mode, as described in the TimedRobot documentation. If you change the name of this class or
@@ -24,12 +18,6 @@ import frc.robot.vision.Limelight;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static DriveSubsystem drive = new DriveSubsystem();
-  public static TailSubsystem tail = new TailSubsystem();
-  public static BeakSubsystem beak = new BeakSubsystem();
-  public static NeckSubsystem neck = new NeckSubsystem();
-  public static FollowTarget follow = new FollowTarget(); 
-  public static Limelight limelight = new Limelight();
 
   private Command m_autonomousCommand;
 
@@ -67,7 +55,6 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void disabledInit() {
-    limelight.lightOff();
   }
 
   @Override

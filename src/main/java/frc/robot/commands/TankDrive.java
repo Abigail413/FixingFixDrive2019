@@ -17,7 +17,6 @@ public class TankDrive extends CommandBase {
   XboxController xbox = new XboxController(0);
   public TankDrive() {
     // Use requires() here to declare subsystem dependencies
-    addRequirements(Robot.drive);
     addRequirements(RobotContainer.drive);
   }
   
@@ -29,7 +28,7 @@ public class TankDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    Robot.drive.TankDrive(xbox.getRawAxis(5), xbox.getRawAxis(1));
+    RobotContainer.drive.TankDrive(xbox.getRawAxis(5), xbox.getRawAxis(1));
   }
 
   // Called once the command ends or is interrupted.
