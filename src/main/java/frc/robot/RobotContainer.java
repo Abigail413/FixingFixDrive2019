@@ -20,7 +20,6 @@ import frc.robot.subsystems.TailSubsystem;
 import frc.robot.vision.FollowTarget;
 import frc.robot.vision.Limelight;
 import frc.robot.Robot;
-import frc.robot.commands.TankDrive;
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -39,8 +38,8 @@ public class RobotContainer {
   public static Limelight limelight = new Limelight();
   public static FollowTarget follow = new FollowTarget();
 
-  //public static TankDrive driving = new TankDrive();
-  private Command driving = new RunCommand(()-> drive.getDifferentialDrive().tankDrive(xbox.getRawAxis(5), xbox.getRawAxis(1)), drive);
+  private Command driving = new RunCommand(
+    () -> drive.getDifferentialDrive().tankDrive(xbox.getRawAxis(5), xbox.getRawAxis(1)), drive);
   //private Command manualDrive = new RunCommand(() -> rDrive.getDifferentialDrive().tankDrive(xbox.getRawAxis(5), xbox.getRawAxis(1)), rDrive);
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
